@@ -15,12 +15,12 @@ A vibrant frontend project showcasing **Sydney events** with interactive cards a
 
 ## 🖼️ Screenshots
 
-![Screenshot 1](images\ss1.png)  
-![Screenshot 2](images\ss2.png) 
-![Screenshot 2](images\ss3.png) 
-![Screenshot 2](images\ss4.png) 
-![Screenshot 2](images\ss5.png) 
-![Screenshot 2](images\ss6.png) 
+![Screenshot 1](images\ss1.png.png)  
+![Screenshot 2](images\ss2.png.png) 
+![Screenshot 2](images\ss3.png.png) 
+![Screenshot 2](images\ss4.png.png) 
+![Screenshot 2](images\ss5.png.png) 
+![Screenshot 2](images\ss6.png.png) 
 
 
 

@@ -15,14 +15,14 @@ A vibrant frontend project showcasing **Sydney events** with interactive cards a
 
 ## 🖼️ Screenshots
 
-![Screenshot 1](C:\Users\LENOVO\Downloads\images\ss1.png)  
-![Screenshot 2](C:\Users\LENOVO\Downloads\images\ss2.png) 
-![Screenshot 2](C:\Users\LENOVO\Downloads\images\ss3.png) 
-![Screenshot 2](C:\Users\LENOVO\Downloads\images\ss4.png) 
-![Screenshot 2](C:\Users\LENOVO\Downloads\images\ss5.png) 
-![Screenshot 2](C:\Users\LENOVO\Downloads\images\ss6.png) 
+![Screenshot 1](images\ss1.png)  
+![Screenshot 2](images\ss2.png) 
+![Screenshot 2](images\ss3.png) 
+![Screenshot 2](images\ss4.png) 
+![Screenshot 2](images\ss5.png) 
+![Screenshot 2](images\ss6.png) 
 
-> Replace with your actual screenshots in the `images/` folder.
+
 
 ---
 

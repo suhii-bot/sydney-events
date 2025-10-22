@@ -32,6 +32,21 @@ A vibrant frontend project showcasing **Sydney events** with interactive cards a
    ```bash
    git clone https://github.com/suhii-bot/sydney-events.git
 
-2.Navigate to the project folder:
-  
+2. Navigate to the project folder:
+   ```bash
    cd sydney-events
+
+
+3. Install dependencies (if using Python backend):
+   ```bash
+   pip install -r requirements.txt
+
+
+4. Run the app (optional Flask backend):
+   ```bash
+   python app.py
+
+
+5. Open your browser and go to:
+   ```bash
+   http://127.0.0.1:5000

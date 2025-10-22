@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Tickets for {{ event.title }}</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 30px; background: #f3e5fa; }
+  .container {
+    max-width: 480px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+  }
+  h1 {
+    color: #a633d9;
+    text-align: center;
+  }
+  form {
+    margin-top: 20px;
+  }
+  label {
+    display: block;
+    margin: 15px 0 5px;
+  }
+  select, input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  button {
+    margin-top: 20px;
+    width: 100%;
+    padding: 12px;
+    background: #a633d9;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+  }
+  button:hover {
+    background: #7a26a1;
+  }
+</style>
+</head>
+<body>
+  <div class="container">
+    <h1>Tickets for {{ event.title }}</h1>
+    <p><strong>Date:</strong> {{ event.date }}</p>
+    <form method="POST">
+      <label for="seat_type">Select seat type:</label>
+      <select id="seat_type" name="seat_type" required>
+        {% for seat, price in tickets.items() %}
+          <option value="{{ seat }}">{{ seat }} - ${{ price }}</option>
+        {% endfor %}
+      </select>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" placeholder="Enter email" required />
+      <button type="submit">Confirm & Get Tickets</button>
+    </form>
+  </div>
+</body>
+</html>

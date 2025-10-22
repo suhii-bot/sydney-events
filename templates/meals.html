@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meals Menu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #ffe5ec, #e0f7ff);
+      font-family: 'Segoe UI', sans-serif;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    h1 {
+      text-align: center;
+      color: #e91e63;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ff4081;
+      margin: 40px 0 20px;
+    }
+
+    .menu-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 20px 40px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .meal-card {
+      width: 250px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+
+    .meal-card:hover {
+      transform: scale(1.05);
+    }
+
+    .meal-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 10px;
+    }
+
+    .meal-card h3 {
+      color: #ff4081;
+      margin: 10px 0 5px;
+    }
+
+    .meal-card p {
+      color: #555;
+      font-size: 16px;
+    }
+
+    /* Falling food styles */
+    .falling-food {
+      position: fixed;
+      top: -100px;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-repeat: repeat-x;
+      background-size: 50px;
+      animation: fall 80s linear infinite;
+      z-index: 0;
+    }
+
+    .falling-food.bun     { background-image: url('/static/food/bun.png'); animation-delay: 0s; }
+    .falling-food.lettuce { background-image: url('/static/food/lettuce.png'); animation-delay: 5s; }
+    .falling-food.tomato  { background-image: url('/static/food/tomato.png'); animation-delay: 10s; }
+    .falling-food.cheese  { background-image: url('/static/food/cheese.png'); animation-delay: 15s; }
+    .falling-food.fries   { background-image: url('/static/food/fries.png'); animation-delay: 20s; }
+
+    @keyframes fall {
+      0% { background-position: 0 -300px; }
+      100% { background-position: 0 300px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Falling food background layers -->
+  <div class="falling-food bun"></div>
+  <div class="falling-food lettuce"></div>
+  <div class="falling-food tomato"></div>
+  <div class="falling-food cheese"></div>
+  <div class="falling-food fries"></div>
+
+  <!-- Page title -->
+  <h1>Our Delicious Meals Menu</h1>
+
+  <!-- Meal cards -->
+  <div class="menu-grid">
+    <div class="meal-card">
+      <img src="/static/meals/pizza.png.png" alt="Pizza Supreme">
+      <h3>Pizza Supreme</h3>
+      <p>₹220 - Loaded with veggies & cheese!</p>
+    </div>
+    <div class="meal-card">
+      <img src="/static/meals/burger.png (2).png" alt="Double Patty Burger">
+      <h3>Double Patty Burger</h3>
+      <p>₹180 - Juicy and satisfying!</p>
+    </div>
+    <div class="meal-card">
+      <img src="/static/meals/fries.png.png" alt="Crispy Fries">
+      <h3>Crispy Fries</h3>
+      <p>₹100 - Golden and crunchy</p>
+    </div>
+  </div>
+
+</body>
+</html>

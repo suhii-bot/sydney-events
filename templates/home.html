@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Welcome to Sydney Events</title>
+  <h2 style="color:#663399;">Experience the ultimate night in Sydney!</h2>
+<p style="max-width:600px; margin: 10px auto; color:#333;">
+  Join us for an unforgettable evening of music, food, celebrity appearances, and vibrant vibes. Book your tickets and get ready to party in style!
+</p>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ffd6f5, #d6f0ff);
+      background-size: 400% 400%;
+      animation: gradient 10s ease infinite;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: -webkit-image-set();
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: #7c195b;
+      text-shadow: 0 0 10px #fff, 0 0 20px #ffb3ff, 0 0 30px #66ccff;
+      margin-bottom: 40px;
+      animation: floatIn 1.2s ease;
+    }
+
+    @keyframes floatIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 250px);
+      grid-gap: 30px;
+      z-index: 1;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+    }
+
+    .card:hover {
+      transform: scale(1.07);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 15px;
+      height: 180px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #cc33cc;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>🎉 Welcome to Sydney Party fest 🎊</h1>
+  <div class="grid">
+    <a href="{{ url_for('meals_page') }}" class="card">
+      <img src="/static/meals/menu.jpg" alt="Meals Menu" />
+      <h2>Meals Menu</h2>
+    </a>
+    <a href="{{ url_for('celebrities_page') }}" class="card">
+      <img src="/static/celebrities/celebs.jpg" alt="Celebrities Venue" />
+      <h2>Celebrity Appearances</h2>
+    </a>
+    <a href="{{ url_for('guests_page') }}" class="card">
+      <img src="/static/guests/guest_venue.jpg" alt="Guest Venue" />
+      <h2>Guest Zones</h2>
+    </a>
+    <a href="{{ url_for('tickets_page') }}" class="card">
+      <img src="/static/tickets/tickets.jpg" alt="Tickets" />
+      <h2>Get Tickets</h2>
+    </a>
+  </div>
+  <canvas id="confetti-canvas" style="position:fixed; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:999;"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+<script>
+  const confettiSettings = {
+    target: 'confetti-canvas',
+    max: 150,
+    size: 1.2,
+    animate: true,
+    props: ['circle', 'square', 'triangle', 'line'],
+    colors: [[255, 183, 233], [181, 234, 255], [255, 255, 255]],
+    clock: 25,
+    rotate: true,
+    width: window.innerWidth,
+    height: window.innerHeight,
+  };
+  const confetti = new ConfettiGenerator(confettiSettings);
+  confetti.render();
+</script>
+
+</body>
+</html>

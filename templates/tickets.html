@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Tickets</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 40px; background: linear-gradient(to right, #fcb1f5, #b1e4fc); }
+  h1 { text-align: center; color: #a633d9; margin-bottom: 40px; }
+  .event-list { max-width: 600px; margin: auto; }
+  .event {
+    background: white; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    margin-bottom: 20px; padding: 20px;
+  }
+  .event h3 { margin-top: 0; color: #a633d9; }
+  .btn {
+    background: #a633d9;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background: #7a26a1;
+  }
+</style>
+</head>
+<body>
+  <h1>Tickets</h1>
+  <div class="event-list">
+    {% for event in events %}
+    <div class="event">
+      <h3>{{ event.title }}</h3>
+      <p>Date: {{ event.date }}</p>
+      <a href="{{ url_for('tickets_detail', event_id=event.id) }}" class="btn">Get Tickets</a>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Guest Venue</title>
+<style>
+  body { font-family: Arial, sans-serif; padding: 40px; background: #d5f3f9; }
+  h1 { text-align: center; color: #3b6a91; margin-bottom: 40px; }
+  .guest-list { max-width: 600px; margin: auto; }
+  .guest {
+    background: white; border-radius: 12px; box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    margin-bottom: 20px; padding: 20px;
+  }
+  .guest h3 { margin-top: 0; color: #3b6a91; }
+</style>
+</head>
+<body>
+  <h1>Guest Venue</h1>
+  <div class="guest-list">
+    {% for guest in guests %}
+    <div class="guest">
+      <h3>{{ guest.name }}</h3>
+      <p>{{ guest.description }}</p>
+    </div>
+    {% endfor %}
+  </div>
+</body>
+</html>

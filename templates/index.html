@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sydney Events</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #fcb1f5, #b1e4fc);
+      padding: 40px;
+      color: #333;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .event {
+      background: white;
+      padding: 20px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      transition: box-shadow 0.3s ease;
+    }
+    .event:hover {
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .event h2 {
+      margin-top: 0;
+      color: #a633d9;
+    }
+    .event p {
+      margin: 8px 0;
+    }
+    .btn {
+      background: #a633d9;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn:hover {
+      background: #7a26a1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Upcoming Sydney Events</h1>
+  {% for event in events %}
+  <div class="event">
+    <h2>{{ event.title }}</h2>
+    <p>Date: {{ event.date }}</p>
+    <a href="{{ url_for('tickets', event_id=event.id) }}" class="btn">Get Tickets</a>
+  </div>
+  {% endfor %}
+</body>
+</html>
